@@ -6,7 +6,20 @@ def index(request):
     return render(request,"home.html")
 
 def about(request):
-    return render(request,"about.html")
+    
+    student_list =[
+        {
+           "name":"umaima", 
+           "roll":"ooo2"
+            
+        },
+        {
+            "name":"zainab",
+           "roll":"ooo3"
+
+        }
+    ]
+    return render(request,"about.html" , { 'data': student_list } , )
 
 
 def contact(request):
