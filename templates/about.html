@@ -1,11 +1,12 @@
 {% extends "home.html" %}
 
 
-
 {% block content %}
 <h1>Student Data</h1>
-{% for student in data %}
-<div class="card w-50">
+<div style="display: flex; flex-direction: column; gap: 10px; margin: 10px auto; justify-content: center;align-items: center;">
+  {% for student in data %}
+
+  <div class="card w-50">
     
     <div class="card-body">
       <h5 class="card-title">Name:{{student.name}}</h5>

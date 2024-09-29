@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1>This s all students data in students app level</h1>
+  <h1>Student Data</h1>
+<div style="display: flex; flex-direction: column; gap: 10px; margin: 10px auto; justify-content: center;align-items: center;">
+  {% for student in students %}
+
+  <div class="card w-50">
+    
+    <div class="card-body">
+      <h5 class="card-title">Username:{{student.username}}</h5>
+      <p class="card-text">Full name:{{student.full_name}}</p>
+      <p class="card-text">Roll no:{{student.roll_no}}</p>
+
+      <p class="card-text">Created At:{{student.created_at}}</p>
+
+      <a href="#" class="btn btn-primary">View details</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock content %}
