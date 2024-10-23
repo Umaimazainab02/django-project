@@ -2,20 +2,18 @@
 
 
 {% block content %}
-<h1>Student Data</h1>
-<div style="display: flex; flex-direction: column; gap: 10px; margin: 10px auto; justify-content: center;align-items: center;">
-  {% for student in data %}
 
-  <div class="card w-50">
-    
+<h1>Student Data</h1>
+<div style="display: flex; flex-direction: column; gap: 10px; margin: 10px auto; justify-content: center; align-items: center;">
+    {% for student  in  data %}
+<div class="card w-50">
     <div class="card-body">
-      <h5 class="card-title">Name:{{student.name}}</h5>
-      <p class="card-text">roll:{{student.roll}}</p>
-      <a href="#" class="btn btn-primary">View details</a>
+      <h5 class="card-title">Name: {{ student.name }}</h5>
+      <p class="card-text">Roll No: {{ student.roll }}</p>
+      <a href="#" class="btn btn-primary">view Details</a>
     </div>
   </div>
-  
 {% endfor %}
-
+</div>
 
 {% endblock content %}

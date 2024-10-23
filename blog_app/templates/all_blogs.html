@@ -1,0 +1,27 @@
+{% extends "base1.html" %}
+
+{% block title %}
+
+Blog | All Blogs
+{% endblock title %}
+
+{% block blog_content %}
+<h1>All Blogs by users</h1>
+<div
+style="display: flex; flex-direction: column; gap: 15px"
+>
+
+{% for blog in blogs %}
+
+<div class="card" style="width: 18rem;">
+   <!--<img src="{{ blog.image.url }}" class="card-img-top" alt="Blog.Image">  -->
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.title|default:"Django" }}</h5>
+      <p class="card-text">Created By: {{ blog.created_by.username|default:"Umaima" }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+  {% endblock blog_content %}
