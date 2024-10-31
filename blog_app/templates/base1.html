@@ -36,6 +36,29 @@
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
+                <li>
+                  {% if user.is_authenticated %}
+                  <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit">logout<button>
+                  </form>
+>
+                  {% endif %}
+
+                  {% if not user.is_authenticated %}
+                  <button>
+                    <a href="{% url 'Login' %}">
+                      Login
+                  </button>
+          
+                  <button>
+                    <a href="{% url 'register' %}">
+                    Register
+
+                  </button>
+
+                  {% endif %}
+                </li>
               </ul>
             </div>
           </nav>

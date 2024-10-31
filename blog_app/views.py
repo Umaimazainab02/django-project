@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import AddBlogForm
+from .forms import AddBlogForm, RegisterForm
 from .models import Add_Blog
 # Create your views here.
 
@@ -30,3 +30,21 @@ def create_blog(request):
     
     return render(request,"create_blog.html", {"form": form})  
     
+    
+def register(request):
+    if request.method =="POST":
+        form = RegisterForm(request.POST)
+            
+        if form.is_valid():
+            user = form.save(commit=False)
+            
+            user.set_password(form.cleaned_data["password1"])
+            
+            user.save()
+            
+            return redirect("all_blogs")
+    form = RegisterForm()    
+    return render(request, "registration/register.html", {"form": form})
+ 
+            
+            

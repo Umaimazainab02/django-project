@@ -129,3 +129,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_URL = "/blog/login"
+
+
+LOGIN_REDIRECT_URL = '/blog/all_blog'
+
+LOGOUT_REDIRECT_URL = '/blog/login'
+
